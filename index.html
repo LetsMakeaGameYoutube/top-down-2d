@@ -7,7 +7,6 @@
       height="400"
       style="background-color: #efefef"
     ></canvas>
-
     <script>
       const canvas = document.getElementById("canvas");
       const context = canvas.getContext("2d");
@@ -70,15 +69,15 @@
         }
       }
 
+      function render() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        renderPlayer();
+      }
+
       function run() {
         updatePlayer();
         render();
         setTimeout(run, 1000 / 60);
-      }
-
-      function render() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        renderPlayer();
       }
 
       run();
